@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="亿方教材助手">
+    <meta name="keywords" content="AnyTextbookDownloader,亿方教材助手,教材,图书">
+    <!-- <meta name="author" content="您的名字"> -->
+
+    <!-- 设置页面主题色 -->
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- 设置页面图标 -->
+    <!-- <link rel="shortcut icon" href="./favicon.ico"> -->
+    <link rel="icon" href="https://webcnstatic.yostar.net/ba_cn_web/prod/web/favicon.png">
+
+    <!-- 设置页面标题 -->
+    <title>亿方教材助手</title>
+
+    <!-- 引入 MDUI CSS 文件 -->
+    <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" />
+
+    <style>
+        .menu-bar {
+            color: white!important;
+        }
+    </style>
+
+
+</head>
+
+<body class="mdui-theme-layout-auto mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-blue">
+
+    <div class="mdui-drawer mdui-drawer-close" id="main-menu">
+        <div class="mdui-list" mdui-collapse="{accordion: true}">
+            <div class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">apps</i>
+                    <!-- <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">Home</div> -->
+                    <div class="mdui-list-item-content">内容</div>
+                    <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+                </div>
+
+                <div class="mdui-collapse-item-body mdui-list">
+                    <a href="./index.html" class="mdui-list-item mdui-ripple">首页</a>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="mdui-container">
+        
+            <!-- 设置应用栏 -->
+        <div class="mdui-appbar mdui-appbar-fixed">
+        <div class="mdui-toolbar mdui-color-theme">
+            <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target: '#main-menu', swipe: true}">
+                <i class="mdui-icon material-icons">menu</i>
+            </span>
+            <a href="javascript:;" class="mdui-typo-headline">亿方教材助手</a>
+            <!-- <a href="javascript:;" class="mdui-typo-title">副标题</a> -->
+            
+            <div class="mdui-toolbar-spacer"></div>
+
+            <div class="mdui-container mdui-typo" align="right">
+                <div class="menu-bar">
+                    <a href="https://basic.smartedu.cn/tchMaterial" target="_blank" style="color: white!important;">全版本教材列表（文档）</a>
+                    <a href="https://jc.pep.com.cn" target="_blank" style="color: white!important;">人教社教材列表（图片）</a>
+
+                </div>
+            </div>
+
+            <!-- <a href="javascript:;" class="mdui-btn mdui-btn-icon">
+                <i class="mdui-icon material-icons">search</i>
+            </a>
+            <a href="javascript:;" class="mdui-btn mdui-btn-icon">
+                <i class="mdui-icon material-icons">refresh</i>
+            </a>
+            <a href="javascript:;" class="mdui-btn mdui-btn-icon">
+                <i class="mdui-icon material-icons">more_vert</i>
+            </a> -->
+        </div>
+        </div>
+
+    </div>
+
+
+    <div class="mdui-container-fluid">
+        <br>
+        <!-- <br> -->
+        <p align="center">
+
+            <div class="mdui-card-content">
+
+                <div class="mdui-typo" style="height: auto !important;">
+                    <!-- <h3>欢迎来到 KFACBT 的网站！</h3> -->
+                    <h1 class="title">亿方教材助手</h1>
+        
+                    <h2 id="-">链接</h2>
+                    <p for="url">点击上方栏目中选项，复制教材链接后粘贴或直接把支持平台的链接粘贴至下方</p>
+
+                    <!-- 浮动标签 -->
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">教材链接</label>
+                        <textarea class="mdui-textfield-input" id="text-url"></textarea>
+                    </div>
+                    
+                    <div class="download-button" align="right">
+                        <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent" onclick="pasteText()">粘贴</button>
+                        <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent" onclick="downloadBook()">开始下载</button>
+
+                    </div>
+
+                    <hr>
+                    <h2 id="-">进度</h2>
+                    
+                    <div class="mdui-progress">
+                        <div class="mdui-progress-determinate" style="width: 30%;"></div>
+                      </div>
+
+                    <h2 id="-">关于本页</h2>
+                    <p>本项目基于 <a href="https://gitlab.com/xiaoyangtech1/AnyTextbookDownloader" target="_blank">AnyTextbookDownloader</a>。</p>
+                    <p>使用本项目请遵守 <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License 2</a> 许可证。</p>
+                    <hr>
+                    <p><a href="https://github.com/Blue-Archive-Web/Blue-Archive-Web.github.io">GitHub 仓库</a></p>
+                    
+                    <div class="mdui-divider"></div>
+                    <br>
+        
+                    <p>Copyright © 2024 <a href="https://github.com/gytxtx" target="_blank">KFACBT</a>. All rights reserved.</p>
+                    <p>本站基于 <a href="https://mdui.org/">MDUI</a> 构建，相关版权归原作者所有。</p>
+                </div>
+        
+            </div>
+
+
+        </p>
+    </div>
+    
+
+    <!-- 引入 MDUI JS 文件 -->
+    <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script>
+
+<!-- JavaScript -->
+<script>
+    function pasteText() {
+        navigator.clipboard.readText()
+            .then(text => {
+                document.getElementById('text-url').value = text;
+            })
+            .catch(err => {
+                console.error('无法读取剪贴板内容: ', err);
+            });
+    }
+
+    // 假设 downloadBook 函数已经定义好
+    function downloadBook() {
+        // 下载逻辑...
+    }
+</script>
+    
+</body>
+</html>
